@@ -1,0 +1,42 @@
+.button{
+    transition: background-color 0s, color 0s, transform 0.3s;
+}
+.button:active{
+    background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+    background-color: rgb(251 146 60);
+    color:white;
+
+}
+.buttons .button.active{
+    background-color: rgb(251 146 60);
+    color:white;
+    transform:scale(1.05);
+}
+/* .button:focus{
+    background-color: rgb(251 146 60);
+    color:white;
+} */
+.card{
+  border: 1px solid transparent; /* Set an initial transparent border */
+  transition: border-color 0.3s; /* Add a transition effect for a smoother change */
+  box-sizing: border-box;
+}
+.cards .card:hover{
+    border: 1px solid rgb(251 146 60);
+}
+.cards .card button{
+    transition: background-color 0.2s, color 0.2s, transform 0.5s;
+}
+.cards .card button:hover{
+    transition: background-color 0.1s, color 0.1s, font-size 0.1s,  transform 0.3s;
+    background-color: rgb(221, 109, 17);
+    transform:scale(1.03);
+    font-size: 17px;
+}
+/* ViewJObs Component */
+.viewJob{
+  border: 1px solid transparent; /* Set an initial transparent border */
+  transition: border-color 0.3s; /* Add a transition effect for a smoother change */
+  box-sizing: border-box;
+  /* overflow-y:scroll; */
+}
