@@ -58,9 +58,9 @@ const CardJob = (props) => {
                   <span className='block bg-teal-200 rounded-3xl px-2 py-[1px]'>  {location}</span>
               </div>             
               
-              <button className=" see-more-btn w-fit bg-orange-400 text-base text-white py-1 px-4 rounded-2xl items-end flex justify-end  ">
+              {/* <button className=" see-more-btn w-fit bg-orange-400 text-base text-white py-1 px-4 rounded-2xl items-end flex justify-end  ">
                   See Details
-              </button>
+              </button> */}
           </div>
       </Link>
   </div>

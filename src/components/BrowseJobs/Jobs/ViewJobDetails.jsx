@@ -73,29 +73,34 @@ import './viewdetails.css';
         {loading ? (
         <div>Loading...</div>
         ) : (
-        <div className='flex space-x-12'>
-            <div className="job-details flex-[1.9]">
+        <div className='flex space-y-16 md:space-x-12 flex-col md:flex-row px-6 lg:px-0'>
+            <div className="job-details flex-[1.9] space-y-7 ">
                 
-                <div className='space-y- flex justify-between'> 
-                  <div className='space-y-5'>             
-                    <h2 className='capitalize font-bold sm:text-xl md:text-3xl'>{job[0].jobTitle}</h2>              
-                    <span className='date-posted block text-xs'> {job[0].companyName} | {job.companyHQ} </span>
-                    <div className='text-sm font-semibold opacity-80 flex space-x-2 mb-1'>
-                        <span className='block bg-teal-100 rounded-3xl px-1 py-[1px]'> {job[0].type} </span>
-                        <span className='block bg-teal-200 rounded-3xl px-2 py-[1px]'>  {job[0].location}</span>
+                <div className='space-y- flex justify-between flex-col md:flex-row'> 
+                  <div className="flex justify-between overflow-hidden ">
+                    <div className='space-y-5 w-full'>             
+                      <h2 className='capitalize font-bold sm:text-xl md:text-3xl'>{job[0].jobTitle}</h2>              
+                      <span className='date-posted block text-xs'> {job[0].companyName} | {job.companyHQ} </span>
+                      <div className='text-sm font-semibold opacity-80 flex space-x-2 mb-1'>
+                          <span className='block bg-teal-100 rounded-3xl px-1 py-[1px]'> {job[0].type} </span>
+                          <span className='block bg-teal-200 rounded-3xl px-2 py-[1px]'>  {job[0].location}</span>
+                      </div> 
+                                          
+                      <div className=' location text-lg font-semibold opacity-80'>
+                          <span className='block'></span>
+                      </div>              
                     </div> 
-                    <span className='skills text-sm flex flex-wrap'>{job[0].skills.map(skill=>
-                    (<span className='flex flex-row px-[1px]'> {skill} | </span>))}</span>                    
-                    <div className=' location text-lg font-semibold opacity-80'>
-                        <span className='block'></span>
-                    </div>              
-                  </div> 
-
-                  <div className='space-y-4 flex flex-col items-center'>
-                  <div className='text-left items-end tooltip'  onClick={toggleFavorite}>
-                    <AiOutlineStar size={28} className='hover: rounded-3xl p-1 hover:bg-yellow-600 cursor-pointer'  />
-                    <span className='tooltiptext text-sm px-[1px]' >Add To Job Tracker</span>
-                  </div>
+                    <div className='text-left items-end tooltip'  onClick={toggleFavorite}>
+                      <AiOutlineStar size={28} className='hover: rounded-3xl p-1 hover:bg-yellow-600 cursor-pointer  md:hidden'  />
+                      <span className='tooltiptext text-sm px-[1px]' >Add To Job Tracker</span>
+                    </div>
+                  </div>          
+                  
+                  <div className='space-y-4 flex flex-col md:it'>
+                    <div className='text-left items-end tooltip hidden md:block'  onClick={toggleFavorite}>
+                      <AiOutlineStar size={28} className='hover: rounded-3xl p-1 hover:bg-yellow-600 cursor-pointer hidden md:block'  />
+                      <span className='tooltiptext text-sm px-[1px]' >Add To Job Tracker</span>
+                    </div>
                     <div className='pr-8 space-y-3'>
                       <button className='block bg-orange-400 rounded-3xl px-5 py-[3px] text-lg text-white'> Apply Now </button>
                       <span className='block px-2 py-[1px]'>  {job[0].location}</span>
@@ -105,6 +110,10 @@ import './viewdetails.css';
                 <>
                 <p className='about-title text-base font-semibold'>Description</p>
                 <p className='description text-base leading-8 mt-4'>{job[0].description}</p>
+                </>
+                <>
+                <span className='skills text-sm flex flex-wrap '>{job[0].skills.map(skill=>
+                      (<span className='flex flex-row rounded-2xl px-3 py-2 bg-yellow-600 mr-1 mb-1 w-fit font-semibold'> {skill} | </span>))}</span>
                 </>
             </div>
             <div className='flex-[0.5]'>

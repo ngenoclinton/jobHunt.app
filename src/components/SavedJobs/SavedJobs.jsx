@@ -40,7 +40,7 @@ const SavedJobs = () => {
 
       <div>
         {savedJobs.length < 1 ? (<div className='mx-auto max-w-2xl px-32 py-16 bg-gray-300 justify-center items-centerx'>No Results Found</div>) : (
-            <div className='grid grid-cols-5 space-x-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 px-5 '>
                 {savedJobs.map((job)=>{
                     return(
                       <Link to={`/browse-jobs/${job.id}`}>  <div className='border-[1px] border-gray-300 px-5 py-4 space-y-2 cursor-pointer flex flex-col justify-evenly' key={job.id}>
